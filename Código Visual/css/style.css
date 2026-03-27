@@ -1,0 +1,195 @@
+/*Fuente cuerpo*/
+@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/*Roots de toda la página*/
+:root {
+  --body: #aac9b4;
+  --letra--gnr: #000;
+  --contacto: #799ec9;
+  --hover--contacto:#c2dad4;
+  --navegacion: #ecece6;
+  --bienvenida--buttom: #dad7b7;
+  --historia: #6e9db9;
+}
+
+/*Configuracion de todo el cuerpo en general*/
+body {
+  background-color: var(--body);
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contacto */
+.contacto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 8px 0;
+  margin: 0;
+  background-color: var(--contacto);
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1001;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: 4px solid var(--hover--contacto);
+}
+
+/* Barra de inicio */
+.barrainicio {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100vw;
+  padding: 30px 20px;
+  margin: 0;
+  background-color: var(--navegacion);
+  font-family: "Montaga", serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1000;
+  border-bottom: 6px solid var(--hover--contacto);
+}
+
+.barrainicio h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--letra--gnr);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.navegacion ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navegacion a {
+  text-decoration: none;
+  color: var(--letra--gnr);
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.navegacion a:hover {
+  background-color: var(--body);
+  color: var(--letra--gnr);
+}
+
+/*Carrusel*/
+
+.carrusel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%; 
+  max-height: 500px;
+  margin: 0 auto;
+  background-color: var(--navegacion);
+}
+
+.imagen-contenedor {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: fit-content;
+}
+
+.imagen-contenedor img {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-right: 4px solid var(--contacto);
+}
+
+/* Botones carrusel */
+.btizquierdo, .btderecho {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background-color: transparent;
+  color: var(--letra--gnr);
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.btizquierdo:hover, .btderecho:hover {
+  background-color: var(--hover--contacto);
+}
+
+/* Bienvenida */
+.bienvenida {
+  font-family: "Montagu Slab", serif;
+  text-align: center;
+  padding: 120px 20px;
+  margin: 0;
+  color: var(--letra--gnr);
+}
+
+.bienvenida h1 {
+  font-size: 2.5rem;
+}
+
+.bienvenida p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Botón Actividades */
+.actividad {
+  background-color: var(--bienvenida--buttom);
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: bold;
+  color: var(--letra--gnr);
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.actividad:hover {
+  transform: scale(1.1);
+  background-color: var(--hover--contacto);
+}
+
+/* Historia */
+.historia {
+  padding: 40px 20px;
+  background-color: var(--historia);
+}
+
+.historia h2 {
+  font-size: 2rem;
+  color: var(--letra--gnr);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.historia p {
+  justify-content: center;
+  font-family: "Montagu Slab", serif;
+  display: flex;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
