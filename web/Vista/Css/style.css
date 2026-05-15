@@ -1,0 +1,555 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt 
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css 
+*/
+
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/*Roots de toda la página*/
+:root {
+  --body: #fff8ef;
+  --letra--gnr: #143E5E;
+  --letra--blck: #000;
+  --navegacion: #bcd4e5;
+  --bienvenida--buttom: #9aab64;
+  --historia: #c5e1a5;
+  --formulario: #bdcab6;
+}
+
+/*Configuracion de todo el cuerpo en general*/
+body {
+  background: url("../Imagenes/ola_1.avif") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Barra de inicio */
+.barrainicio {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100vw;
+  padding: 30px 20px;
+  margin: 0;
+  background-color: var(--navegacion);
+  font-family: "Montaga", serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1000;
+  border-bottom: 6px solid var(--letra--gnr);
+}
+
+.barrainicio h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--letra--gnr);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.navegacion ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navegacion a {
+  text-decoration: none;
+  color: var(--letra--gnr);
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.navegacion a:hover {
+  background-color: var(--historia);
+  color: var(--letra--gnr);
+}
+
+/*Carrusel*/
+
+.carrusel {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Contenedor de imágenes */
+.imagen-contenedor {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.imagen-contenedor img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; 
+  flex-shrink: 0;
+}
+
+.carrusel::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(208, 240, 192, 0.5); 
+  backdrop-filter: blur(6px);
+  z-index: 2; 
+}
+
+/* Botones carrusel */
+.btizquierdo, .btderecho {
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 5rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.btizquierdo:hover, .btderecho:hover {
+  background-color: var(--navegacion);
+}
+
+.btizquierdo { left: 10px; }
+.btderecho { right: 10px; }
+
+
+/* bienvenida */
+.bienvenida {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 3;
+  font-family: "Montaga", serif;
+  font-size: 4.5rem;
+}
+
+.bienvenida p {
+  margin: 0; 
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); 
+}
+
+/* Botón de bienvenida */
+.bienvenida h3 {
+  border: none;
+  width: 800px;   /* más pequeño */
+  height: 3em;   /* más compacto */
+  border-radius: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+}
+
+.bienvenida h3:hover {
+  background: linear-gradient(0deg, #c5e1a5, #a0bb81); /* degradado verde pastel */
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+              inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+              0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+              0px 0px 120px 0px #9fd89f; /* glow verde suave */
+  transform: translateY(-2px);
+}
+
+
+
+/* Historia */
+.historia {
+  padding: 40px 20px;
+  background-color: var(--historia);
+}
+
+.historia h2 {
+  font-size: 2rem;
+  color: var(--letra--gnr);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.historia p {
+  justify-content: center;
+  font-family: "Montagu Slab", serif;
+  display: flex;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--letra--gnr);
+}
+
+/*Actividades*/
+
+.contenedores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 30px;
+  padding: 40px;
+  margin-top: 120px;
+}
+
+.contenedor {
+  background-color: var(--historia); 
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.contenedor:hover {
+  background-color: var(--bienvenida--buttom); 
+  color: #fff; 
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.contenedor h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.contenedor p {
+  font-size: 1rem;
+}
+
+/* Formulario */
+.Formulario {
+  margin-top: 120px;
+  padding: 40px;  
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(12px);           
+  border-radius: 20px;
+  width: 80%; 
+  max-width: 500px;  
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  color: #000;
+  border: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+  margin-bottom: 71px ;
+}
+
+.Formulario h2 {
+  font-family: "Montaga", serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+.Formulario label,
+.Formulario h2 {
+  color: var(--letra--gnr);
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(255,255,255,0.6); 
+}
+
+.Formulario input {
+  color: #000; 
+  font-weight: 500;
+}
+
+.Formulario input:placeholder {
+  color: #000; 
+  font-style: italic;
+  opacity: 50%;
+}
+
+
+.Formulario button {
+  width: 45%;
+  padding: 12px;
+  margin: 10px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, var(--navegacion), #4d5d88);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.Formulario button:hover {
+  background: linear-gradient(135deg, #4d5d88, var(--navegacion));
+  transform: scale(1.05);
+}
+
+.mensaje {
+    background: rgba(255, 0, 0, 0.2);
+    color: #b30000;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+.Formulario input,
+.Formulario input{
+  display: block;
+  width: 95%;
+  font-size: 1rem;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none; 
+}
+
+.Formulario input:focus,
+.Formulario input:focus {
+  border: 1px solid var(--body); 
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Botón envia*/
+.Formulario input[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--navegacion);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/*botón formulario*/
+
+.Formulario tipodocs [type="select"] {
+    border-radius: 30px;
+    margin: 10px;
+    margin-top: 40px
+}
+
+
+/* footer */
+.footer {
+  background-color: var(--navegacion);
+  color:var(--letra--gnr);;
+  padding: 20px 20px;
+}
+
+.footer-contenedor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.footer-info h3,
+.footer-redes h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+}
+
+.footer-info p,
+.footer-redes a {
+  font-size: 0.95rem;
+  color: var(--letra--gnr);
+  text-decoration: none;
+}
+
+.footer-redes a:hover {
+  color: var(--body);
+}
+
+/* Logo Footer */
+.logo-footer img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 15px;
+}
+
+
+.Formulario-button {
+    background-color: red;
+}
+
+
+.contenedores {
+    width: 100% !important;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.titulo-seccion {
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.actividades {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100% !important;
+    margin: 0 auto !important;
+    max-width: 1200px;
+}
+
+
+.card {
+  width: 320px;
+  height: 450px;
+  overflow: visible;
+  perspective: 1000px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 600ms;
+  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  background-color: #151515;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-content {
+  color: white;
+  z-index: 1;
+}
+
+
+.front {
+  transform: rotateY(180deg);
+  color: white;
+}
+
+.img-card {
+  position: absolute;
+  top:0;
+  left:0;
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  border-radius: 10px;
+  object-fit: fill;
+  
+}
+
+.front-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 15px;
+  background: rgba(179, 177, 130, 0.3); 
+}
+
+.description {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.badge {
+  background-color: #ff9966;
+  padding: 2px 10px;
+  border-radius: 10px;
+  width: fit-content;
+  font-size: 10px;
+}
+
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ffbb66;
+  position: absolute;
+  filter: blur(25px);
+  animation: floating 2600ms infinite linear;
+}
+
+#bottom { background-color: #ff8866; left: 60px; top: 100px; }
+#right { background-color: #ff2233; left: 140px; top: -30px; }
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(15px); }
+}
+
+
+
+
+
